@@ -4,6 +4,7 @@ import LandingPage from "./pages/LandingPage";
 import CreateTrip from "./pages/CreateTrip";
 import toast, { Toaster } from 'react-hot-toast';
 
+
 function App() {
   return (
     <>

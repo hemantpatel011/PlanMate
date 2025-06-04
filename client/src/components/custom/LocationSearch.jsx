@@ -5,7 +5,7 @@ const libraries = ['places'];
 
 const LocationSearch = ({ onPlaceSelect }) => {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: 'AIzaSyDfppEfOpm-EaT2aRcT5KUW4JxD_Bj5rls', //actual API key
+    googleMapsApiKey: import.meta.env.VITE_PLACE_API_KEY, //actual API key
     libraries,
   });
 

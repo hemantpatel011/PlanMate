@@ -50,4 +50,4 @@ export const SelectBudgetOptions = [
   },
 ];
 
-export const AI_PROMPT = `Generate Travel Plan for Location: {location}, for {totalDays} Days for {traveler} with a {budget} budget. Give hotel options list with HotelName, Hotel address, Price, image URL, coordinates, rating, description. Also suggest itinerary (day-wise) with placeName, details, place image, coordinates, ticket Pricing (INR), travel time. Format in JSON.`;
+export const AI_PROMPT = `Generate Travel Plan for Location: {location}, for {totalDays} Days for {traveler} with a {budget} budget. Give hotel options list with HotelName, Hotel address, Price,Hotel image URL, coordinates, rating, description. Also suggest itinerary (day-wise) with placeName, details, genetate place image by ai and provide its  URL, coordinates, ticket Pricing (INR), best time to visit .Respond with a strict JSON string only. Use double quotes for all keys and values.`;

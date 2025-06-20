@@ -4,7 +4,7 @@ import { Input } from '../components/ui/input';
 import { Button } from '../components/ui/button';
 import { AI_PROMPT, SelectBudgetOptions, SelectTravelList } from '../components/constants/options';
 import toast from 'react-hot-toast';
-import { generateTravelPlan } from '../config/AIModal';
+import  generateTravelPlan  from '../config/AIModal';
 
 const CreateTrip = () => {
   const [errors, setErrors] = useState({});
@@ -34,20 +34,21 @@ const CreateTrip = () => {
   const validate = () => {
     let tempErrors = {};
     if (formData?.noOfDays > 10 || formData?.noOfDays < 1)
-      tempErrors.noOfDays = 'Please enter Number of trip days between 1-10.';
+      tempErrors.noOfDays = 'Please enter Number of trip days less than 10.';
     setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0;
   };
 
   const onGenerateTrip = async () => {
     if (!validate()) {
-      toast.error('Please enter Number of trip days between 1-10.');
+      toast.error('Please enter Number of trip days less than 10.');
       return;
     }
     if (!formData.noOfDays || !formData.location || !formData.budget || !formData.traveler) {
       toast.error('Please fill all Details');
       return;
     }
+    console.log('Form Data:', formData);
 
     const FINAL_PROMPT = AI_PROMPT
       .replace(/{location}/g, formData.location)
@@ -55,10 +56,18 @@ const CreateTrip = () => {
       .replace(/{traveler}/g, formData.traveler)
       .replace(/{budget}/g, formData.budget);
 
+      console.log(FINAL_PROMPT);
+      
+      // const result = await generateTravelPlan(FINAL_PROMPT);
+      // console.log('Generated Result:', result);
+
     try {
       setLoading(true);
       const generatedData = await generateTravelPlan(FINAL_PROMPT);
+      console.log('Generated Data:', generatedData);
       setResult(generatedData);
+      toast.success('Trip plan generated successfully!');
+      console.log('Generated Result:', result);
     } catch (error) {
       toast.error('Failed to generate trip plan.');
     } finally {
@@ -89,6 +98,7 @@ const CreateTrip = () => {
             value={formData.noOfDays}
             onChange={handleInputChange}
           />
+          {/* showing error */}
           {errors.noOfDays && <p className="mt-1 text-sm text-red-500">{errors.noOfDays}</p>}
         </div>
 

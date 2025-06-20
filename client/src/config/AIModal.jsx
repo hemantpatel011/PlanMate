@@ -7,7 +7,7 @@ const generationConfig = {
   temperature: 0.8,
 };
 
-export const generateTravelPlan = async (promptText) => {
+const generateTravelPlan = async (promptText) => {
   try {
     const modelInstance = ai.getGenerativeModel({ model });
 
@@ -29,3 +29,5 @@ export const generateTravelPlan = async (promptText) => {
     throw err;
   }
 };
+
+export default generateTravelPlan;  

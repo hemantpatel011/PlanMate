@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import LocationSearch from "../components/custom/LocationSearch";
 import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+
 import {
   AI_PROMPT,
   SelectBudgetOptions,
@@ -21,13 +23,18 @@ import { FcGoogle } from "react-icons/fc";
 import { useGoogleLogin } from "@react-oauth/google";
 //import jwt_decode from "jwt-decode";
 import axios from 'axios';
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "../config/firebaseConfig";
+import { useNavigate } from "react-router-dom";
 
 const CreateTrip = () => {
   const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({});
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState();
   const [openDailog, setOpenDailog] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   const handlePlaceSelect = (place) => {
     setFormData((prev) => ({
@@ -122,17 +129,34 @@ const CreateTrip = () => {
 
     try {
       setLoading(true);
+       toast.success("Generating Your Trip Plae!");
       const generatedData = await generateTravelPlan(FINAL_PROMPT);
       console.log("Generated Data:", generatedData);
       setResult(generatedData);
       toast.success("Trip plan generated successfully!");
-      console.log("Generated Result:", result);
+       SaveAiTrip(generatedData);
+       
     } catch (error) {
       toast.error("Failed to generate trip plan.");
     } finally {
       setLoading(false);
     }
   };
+
+  // Save AI Trip in firebase 
+  const SaveAiTrip = async (TripData) => {
+    setLoading(true);
+    const user = JSON.parse(sessionStorage.getItem("user"));
+    const docId = Date.now().toString();
+    await setDoc(doc(db,"AITrip",docId),{
+      userSelection:formData,
+      TripData:TripData,
+      userEmail: user.email,
+      id:docId
+    })
+    setLoading(false);
+    navigate("/view-trip/"+docId);
+  }
 
   return (
     <div className="sm:px-10 md:px-32 lg:px-56 xl:px-72 px-5 mask-t-from-100% mt-16">
@@ -223,7 +247,8 @@ const CreateTrip = () => {
 
         <div className="mb-12 flex justify-end">
           <Button onClick={onGenerateTrip}>
-            {loading ? "Generating..." : "Generate Trip"}
+            {loading ? <AiOutlineLoading3Quarters className="h-7 w-7 animate-spin" />
+ : "Generate Trip"}
           </Button>
         </div>
 

@@ -17,7 +17,7 @@ const generateTravelPlan = async (promptText) => {
     });
 
     const text = await result.response.text();
-
+    
     const match = text.match(/```json([\s\S]*?)```/);
     if (match && match[1]) {
       return JSON.parse(match[1]);

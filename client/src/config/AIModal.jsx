@@ -4,7 +4,7 @@ const ai = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
 
 const model = 'gemini-1.5-flash';
 const generationConfig = {
-  temperature: 0.8,
+  temperature: 1,
 };
 
 const generateTravelPlan = async (promptText) => {

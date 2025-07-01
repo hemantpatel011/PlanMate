@@ -5,7 +5,7 @@ const LandingPage = () => {
   return (
     <>
     {/* Hero Section */}
-     <div className="flex flex-col min-w-full min-h-[600px] bg-red-50 items-center pt-36 gap-10">
+     <div className="flex flex-col min-w-full min-h-[600px] bg-gray-200 items-center pt-60 pb-30 gap-10">
       <h1 className="flex flex-col font-extrabold text-[3.5rem] text-center ">
         <span className="text-red-600">Discover Your Next Adventure with AI</span> 
         <span className="mt-[-20px]">Personalized Itineraries at Your Fingertips</span>

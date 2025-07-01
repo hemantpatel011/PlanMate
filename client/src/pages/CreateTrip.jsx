@@ -148,7 +148,7 @@ const CreateTrip = () => {
     setLoading(true);
     const user = JSON.parse(sessionStorage.getItem("user"));
     const docId = Date.now().toString();
-    await setDoc(doc(db,"AITrip",docId),{
+    await setDoc(doc(db,"AITrips",docId),{
       userSelection:formData,
       TripData:TripData,
       userEmail: user.email,
@@ -159,8 +159,8 @@ const CreateTrip = () => {
   }
 
   return (
-    <div className="sm:px-10 md:px-32 lg:px-56 xl:px-72 px-5 mask-t-from-100% mt-16">
-      <h2 className="font-bold text-3xl">
+    <div className="sm:px-10 md:px-32 lg:px-56 xl:px-72 px-5 mask-t-from-100% pt-30 bg-gray-100">
+      <h2 className="font-bold text-4xl ">
         Tell us your travel preferences 🏕️🌴
       </h2>
       <p className="mt-3 text-gray-500 text-xl">
@@ -174,7 +174,7 @@ const CreateTrip = () => {
             What is your destination of choice?
           </h2>
           <LocationSearch
-            className="focus-visible:border-red-500"
+            className="focus-visible:border-red-500 "
             onPlaceSelect={handlePlaceSelect}
           />
         </div>
@@ -185,7 +185,7 @@ const CreateTrip = () => {
           </h2>
           <Input
             className={`${
-              errors.noOfDays ? "border-red-500" : "border-gray-300"
+              errors.noOfDays ? "border-red-500 shadow-xl" : "border-gray-300 shadow-2xl"
             }`}
             placeholder="Ex.3"
             type="number"
@@ -201,14 +201,14 @@ const CreateTrip = () => {
 
         <div>
           <h2 className="text-xl font-medium">What is your Budget?</h2>
-          <div className="grid grid-cols-3 gap-5 mt-5">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-5 mt-5">
             {SelectBudgetOptions.map((item, index) => (
               <div
                 key={index}
                 onClick={() =>
                   setFormData((prev) => ({ ...prev, budget: item.title }))
                 }
-                className={`p-4 border cursor-pointer rounded-lg hover:border-red-500 hover:border-2 hover:border-b-12 ${
+                className={`p-4 border-2 shadow-xl cursor-pointer rounded-lg hover:border-red-500 ${
                   formData?.budget === item.title &&
                   "border-red-500 border-2 border-b-12"
                 }`}
@@ -225,14 +225,14 @@ const CreateTrip = () => {
           <h2 className="text-xl font-medium">
             Who do you plan on traveling with on your next adventure?
           </h2>
-          <div className="grid grid-cols-3 gap-3 mt-5">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-5">
             {SelectTravelList.map((item, index) => (
               <div
                 key={index}
                 onClick={() =>
                   setFormData((prev) => ({ ...prev, traveler: item.people }))
                 }
-                className={`p-4 border cursor-pointer rounded-lg hover:border-red-500 hover:border-2 hover:border-b-12 ${
+                className={`p-4 border-2 shadow-xl cursor-pointer rounded-lg hover:border-red-500 ${
                   formData?.traveler === item.people &&
                   "border-red-500 border-2 border-b-12"
                 }`}

@@ -35,7 +35,7 @@ const LocationSearch = ({ onPlaceSelect }) => {
       <input
         type="text"
         placeholder="Search destination..."
-        className="border border-gray-300 rounded px-4 py-2 w-full"
+        className="border border-gray-300 rounded px-4 py-2 w-full shadow-md"
       />
     </Autocomplete>
   );

@@ -50,7 +50,7 @@ export const SelectBudgetOptions = [
   },
 ];
 
-export const AI_PROMPT = `Generate Travel Plan for Location :{location}, for {totalDays} for {traveler} with a {budget} budget, Give me a Hotels options list with hotelName, hotelAddress, price(in ₹ in location is in india or $ for other), hotel image url, geo coordinates, rating (out of 5), descriptions( 15-20 words) and suggest itinerary with placeName, placeDetails, placeImage url, geoCoordinates, ticketPricing, rating, Time travel each of the location for 3 days with each day plan with best time to visit in JSON format. 
+export const AI_PROMPT = `Generate Travel Plan for Location :{location}, for {totalDays} days for {traveler} with a {budget} budget, Give me a Hotels options list with hotelName, hotelAddress, price(in ₹ in location is in india or $ for other), hotel image url, geo coordinates, rating (out of 5), descriptions( min 15- max 20 words) and suggest itinerary with placeName, placeDetails, placeImage url, geoCoordinates, ticketPricing, rating, Time travel each of the location for {totalDays} days with each day plan with best time to visit in JSON format. 
 Here is example what Data Format i want in response:-
 
 {
@@ -96,7 +96,7 @@ Here is example what Data Format i want in response:-
             "latitude": 22.4620,
             "longitude": 78.4480
           },
-          "ticketPricing": "₹100 per person (approx. for entry and vehicle charges)",
+          "ticketPricing": "₹100 per person",
           "rating": 4.5,
           "timeToTravel": "2.5 hours",
           "bestTimeToVisit": "9:00 AM - 11:30 AM"
@@ -153,7 +153,7 @@ Here is example what Data Format i want in response:-
             "latitude": 22.4450,
             "longitude": 78.4720
           },
-          "ticketPricing": "Vehicle entry fees may apply (approx. ₹50-₹100)",
+          "ticketPricing": "Vehicle charge (approx. ₹50-₹100)",
           "rating": 4.7,
           "timeToTravel": "2 hours",
           "bestTimeToVisit": "5:00 AM - 7:00 AM"
@@ -179,7 +179,7 @@ Here is example what Data Format i want in response:-
             "latitude": 22.4600,
             "longitude": 78.4100
           },
-          "ticketPricing": "Free (Guide may be required, charges extra)",
+          "ticketPricing": "Free",
           "rating": 4.4,
           "timeToTravel": "2.5 hours (including trek)",
           "bestTimeToVisit": "10:30 AM - 1:00 PM"
@@ -192,7 +192,7 @@ Here is example what Data Format i want in response:-
             "latitude": 22.4690,
             "longitude": 78.4360
           },
-          "ticketPricing": "Free (Shopping at your discretion)",
+          "ticketPricing": "Free ",
           "rating": 3.9,
           "timeToTravel": "1.5 hours",
           "bestTimeToVisit": "4:00 PM - 5:30 PM "

@@ -4,6 +4,7 @@ import LandingPage from "./pages/LandingPage";
 import CreateTrip from "./pages/CreateTrip";
 import toast, { Toaster } from 'react-hot-toast';
 import ViewTrip from "./pages/ViewTrip";
+import Footer from "./components/custom/Footer";
 
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
       </Router>
     
       </main>
+      <footer>
+        <Footer/>
+      </footer>
     </>
   );
 }

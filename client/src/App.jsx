@@ -5,6 +5,7 @@ import CreateTrip from "./pages/CreateTrip";
 import toast, { Toaster } from 'react-hot-toast';
 import ViewTrip from "./pages/ViewTrip";
 import Footer from "./components/custom/Footer";
+import MyTrip from "./pages/MyTrip";
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
          <Header />
       </header>
 
-      <main>      
+      <main className="bg-gray-100 min-h-screen">      
       <Router>
         <Routes>
           {/* Default Route */}
@@ -23,6 +24,7 @@ function App() {
 
           <Route path="/create-trip" element={<CreateTrip />} />
           <Route path="/view-trip/:tripId" element={<ViewTrip />} />
+          <Route path="/my-trip" element={<MyTrip/>} />
         </Routes>
       </Router>
     

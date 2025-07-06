@@ -72,7 +72,7 @@ Here is example what Data Format i want in response:-
       "description": "Hotel Pachmarhi offers comfortable accommodation with basic amenities, conveniently located near the bus stand."
     },
     {
-      "hotelName": "MPT Satpura Retreat, Pachmarhi",
+      "hotelName": "MPT Satpura Retreat",
       "hotelAddress": "Near Collectorate, Pachmarhi, Madhya Pradesh 461881",
       "price": "₹4000 - ₹5500",
       "hotelImageURL": "https://example.com/mpt_satpura_retreat.jpg",
@@ -89,8 +89,8 @@ Here is example what Data Format i want in response:-
       "day": Day 1,
       "plan": [
         {
-          "placeName": "Bee Fall (Jamuna Prapat)",
-          "placeDetails": "One of the most popular waterfalls in Pachmarhi, known for its pristine waters and natural beauty. Visitors can enjoy a refreshing dip in the natural pools.",
+          "placeName": "Bee Fall",
+          "placeDetails": "One of the most popular waterfalls in Pachmarhi, known for its pristine waters and natural beauty.",
           "placeImageURL": "https://example.com/bee_fall.jpg",
           "geoCoordinates": {
             "latitude": 22.4620,
@@ -102,7 +102,7 @@ Here is example what Data Format i want in response:-
           "bestTimeToVisit": "9:00 AM - 11:30 AM"
         },
         {
-          "placeName": "Handi Khoh (Deep Valley)",
+          "placeName": "Handi Khoh ",
           "placeDetails": "A dramatic deep valley with steep cliffs, offering breathtaking panoramic views of the surrounding hills and forests.",
           "placeImageURL": "https://example.com/handi_khoh.jpg",
           "geoCoordinates": {
@@ -115,8 +115,8 @@ Here is example what Data Format i want in response:-
           "bestTimeToVisit": "11:30 AM - 12:30 PM"
         },
         {
-          "placeName": "Priyadarshini Point (Forsyth Point)",
-          "placeDetails": "Offers a stunning sunrise view over the Satpura ranges and is believed to be the spot where Captain Forsyth first discovered Pachmarhi.",
+          "placeName": "Priyadarshini Point",
+          "placeDetails": "Offers a stunning sunrise view over the Satpura ranges and is believed to be the spot..",
           "placeImageURL": "https://example.com/priyadarshini_point.jpg",
           "geoCoordinates": {
             "latitude": 22.4735,
@@ -146,8 +146,8 @@ Here is example what Data Format i want in response:-
       "day": Day 2,
       "plan": [
         {
-          "placeName": "Dhoopgarh (Sunrise Point)",
-          "placeDetails": "The highest point in Pachmarhi, offering panoramic views of the entire Satpura range, especially stunning during sunrise. ",
+          "placeName": "Dhoopgarh Peak",
+          "placeDetails": "The highest point in Pachmarhi, offering panoramic views of the entire Satpura range. especially stunning during sunrise. ",
           "placeImageURL": "https://example.com/dhoopgarh.jpg",
           "geoCoordinates": {
             "latitude": 22.4450,
@@ -173,7 +173,7 @@ Here is example what Data Format i want in response:-
         },
         {
           "placeName": "Duchess Fall",
-          "placeDetails": "A magnificent three-tiered waterfall, requiring a moderate trek to reach. Ideal for adventurous couples.",
+          "placeDetails": "A magnificent three-tiered waterfall, requiring a moderate trek to reach. ",
           "placeImageURL": "https://example.com/duchess_fall.jpg",
           "geoCoordinates": {
             "latitude": 22.4600,
@@ -186,7 +186,7 @@ Here is example what Data Format i want in response:-
         },
         {
           "placeName": "Pachmarhi Bazaar",
-          "placeDetails": "Explore the local market for souvenirs, handicrafts, and local delicacies. A great place to experience the local culture and pick up some mementos.",
+          "placeDetails": "Explore the local market for souvenirs, handicrafts, and local delicacies.",
           "placeImageURL": "https://example.com/pachmarhi_bazaar.jpg",
           "geoCoordinates": {
             "latitude": 22.4690,

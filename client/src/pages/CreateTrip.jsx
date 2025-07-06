@@ -185,7 +185,7 @@ const CreateTrip = () => {
           </h2>
           <Input
             className={`${
-              errors.noOfDays ? "border-red-500 shadow-xl" : "border-gray-300 shadow-2xl"
+              errors.noOfDays ? "border-red-500 shadow-xl" : "border-gray-300 bg-gray-50"
             }`}
             placeholder="Ex.3"
             type="number"
@@ -208,7 +208,7 @@ const CreateTrip = () => {
                 onClick={() =>
                   setFormData((prev) => ({ ...prev, budget: item.title }))
                 }
-                className={`p-4 border-2 shadow-xl cursor-pointer rounded-lg hover:border-red-500 ${
+                className={`p-4 border-2 shadow-xl cursor-pointer rounded-lg hover:border-red-500 bg-gray-50 ${
                   formData?.budget === item.title &&
                   "border-red-500 border-2 border-b-12"
                 }`}
@@ -232,7 +232,7 @@ const CreateTrip = () => {
                 onClick={() =>
                   setFormData((prev) => ({ ...prev, traveler: item.people }))
                 }
-                className={`p-4 border-2 shadow-xl cursor-pointer rounded-lg hover:border-red-500 ${
+                className={`p-4 border-2 shadow-xl cursor-pointer rounded-lg hover:border-red-500 bg-gray-50 ${
                   formData?.traveler === item.people &&
                   "border-red-500 border-2 border-b-12"
                 }`}
@@ -252,7 +252,7 @@ const CreateTrip = () => {
           </Button>
         </div>
 
-        {result && (
+        {/* {result && (
           <div className="bg-gray-100 p-4 rounded">
             <h3 className="text-xl font-semibold mb-2">
               Generated Travel Plan
@@ -261,7 +261,7 @@ const CreateTrip = () => {
               {JSON.stringify(result, null, 2)}
             </pre>
           </div>
-        )}
+        )} */}
       </div>
 
       <Dialog open={openDailog}>

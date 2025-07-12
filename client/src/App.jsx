@@ -7,7 +7,7 @@ import ViewTrip from "./pages/ViewTrip";
 import Footer from "./components/custom/Footer";
 import MyTrip from "./pages/MyTrip";
 import { SpeedInsights } from "@vercel/speed-insights/react";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 
 function App() {

@@ -54,7 +54,7 @@ const CreateTrip = () => {
   };
 
   useEffect(() => {
-    console.log(formData);
+    // console.log(formData);
   }, [formData]);
 
   const validate = () => {
@@ -77,7 +77,7 @@ const CreateTrip = () => {
             },
           }
         );
-        console.log("Google User Info:", res.data);
+        // console.log("Google User Info:", res.data);
         // Store user data in localStorage or sessionStorage
        sessionStorage.setItem("user", JSON.stringify(res.data));
       setUser(res.data); // ✅ this will update Header immediately
@@ -116,23 +116,23 @@ onGenerateTrip();
       toast.error("Please fill all Details");
       return;
     }
-    console.log("Form Data:", formData);
+    // console.log("Form Data:", formData);
 
     const FINAL_PROMPT = AI_PROMPT.replace("{location}", formData.location)
       .replace("{totalDays}", formData.noOfDays)
       .replace("{traveler}", formData.traveler)
       .replace("{budget}", formData.budget);
 
-    console.log(FINAL_PROMPT);
+    // console.log(FINAL_PROMPT);
 
     // const result = await generateTravelPlan(FINAL_PROMPT);
     // console.log('Generated Result:', result);
 
     try {
       setLoading(true);
-       toast.success("Generating Your Trip Plae!");
+       toast.success("Generating Your Trip Plan!");
       const generatedData = await generateTravelPlan(FINAL_PROMPT);
-      console.log("Generated Data:", generatedData);
+      // console.log("Generated Data:", generatedData);
       setResult(generatedData);
       toast.success("Trip plan generated successfully!");
        SaveAiTrip(generatedData);

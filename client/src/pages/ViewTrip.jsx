@@ -20,7 +20,7 @@ const ViewTrip = () => {
 
   useEffect(() => {
     if (trip) {
-      console.log("trip:", trip); // ✅ This logs after trip is set
+      // console.log("trip:", trip); // ✅ This logs after trip is set
     }
   }, [trip]);
 
@@ -33,7 +33,7 @@ const ViewTrip = () => {
 
       if (docSnap.exists()) {
         const data = docSnap.data();
-        console.log("Document data:", data);
+        // console.log("Document data:", data);
         setTrip(data);
       } else {
         console.log("No such document!");

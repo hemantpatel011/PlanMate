@@ -17,14 +17,14 @@ const InfoSection = ({ trip }) => {
 
   const GetPlacePhoto = async () => {
     const data = {
-      textQuery: trip?.TripData?.itinerary[0]?.plan[0]?.placeName,
+      textQuery: trip?.userSelection?.location,
     };
 
     try {
       const response = await GetPlaceDetails(data);
       const imageUrl = PHOTO_REF_URL.replace(
         "{NAME}",
-        response?.data?.places[0]?.photos[0]?.name
+        response?.data?.places?.[0]?.photos?.[0]?.name
       );
       setPhotoUrl(imageUrl);
     } catch (error) {

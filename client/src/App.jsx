@@ -13,6 +13,7 @@ function App() {
   return (
     <>
     <SpeedInsights/>
+    <Analytics/>
     <Toaster/>
      
 

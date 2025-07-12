@@ -1,10 +1,9 @@
 
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCYe6F0DOkLf2QhbEyNnGCJzV9m5wyiLIc",
+  apiKey: import.meta.env.VITE_FIREBACE_API_KEY,
   authDomain: "tripmate-dcfb2.firebaseapp.com",
   projectId: "tripmate-dcfb2",
   storageBucket: "tripmate-dcfb2.firebasestorage.app",
@@ -16,4 +15,3 @@ const firebaseConfig = {
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
-// const analytics = getAnalytics(app);

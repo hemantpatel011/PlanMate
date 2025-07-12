@@ -12,12 +12,13 @@ function App() {
   return (
     <>
     <Toaster/>
-      <header>
-         <Header />
-      </header>
+     
 
       <main className="bg-gray-100 min-h-screen">      
       <Router>
+         <header>
+         <Header />
+      </header>
         <Routes>
           {/* Default Route */}
           <Route path="/" element={<LandingPage />} />

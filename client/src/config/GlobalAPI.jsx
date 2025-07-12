@@ -25,4 +25,4 @@ export const GetPlaceDetails = async (data) => {
   }
 };
 
-export const PHOTO_REF_URL = 'https://places.googleapis.com/v1/{NAME}/media?key='+import.meta.env.VITE_PLACE_API_KEY+'&maxHeightPx=1200&maxWidthPx=1200';
+export const PHOTO_REF_URL = 'https://places.googleapis.com/v1/{NAME}/media?key='+import.meta.env.VITE_PLACE_API_KEY+'&maxHeightPx=1000&maxWidthPx=1000';

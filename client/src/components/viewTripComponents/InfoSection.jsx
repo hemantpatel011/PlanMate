@@ -9,6 +9,7 @@ import {
 import { Button } from "../ui/button";
 import { IoIosSend } from "react-icons/io";
 import { GetPlaceDetails, PHOTO_REF_URL } from "../../config/GlobalAPI";
+import { Link } from "react-router-dom";
 
 const InfoSection = ({ trip }) => {
   const [photoUrl, setPhotoUrl] = useState();
@@ -23,7 +24,7 @@ const InfoSection = ({ trip }) => {
       const response = await GetPlaceDetails(data);
       const imageUrl = PHOTO_REF_URL.replace(
         "{NAME}",
-        response?.data?.places[0]?.photos[3]?.name
+        response?.data?.places[0]?.photos[0]?.name
       );
       setPhotoUrl(imageUrl);
     } catch (error) {
@@ -62,9 +63,14 @@ const InfoSection = ({ trip }) => {
             {trip?.userSelection?.location || "N/A"}
           </h2>
         )}
+         <Link
+                to={`https://www.google.com/maps/search/?api=1&query=${trip?.userSelection?.location }`}
+                target="_blank"
+              >
         <Button disabled={loading}>
           <IoIosSend />
         </Button>
+        </Link>
       </div>
 
       <div className="flex">

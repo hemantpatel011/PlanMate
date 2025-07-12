@@ -3,7 +3,6 @@ import LocationSearch from "../components/custom/LocationSearch";
 import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-
 import {
   AI_PROMPT,
   SelectBudgetOptions,
@@ -21,11 +20,12 @@ import {
 } from "@/components/ui/dialog";
 import { FcGoogle } from "react-icons/fc";
 import { useGoogleLogin } from "@react-oauth/google";
-//import jwt_decode from "jwt-decode";
 import axios from 'axios';
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../config/firebaseConfig";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "../context/UserContext";
+
 
 const CreateTrip = () => {
   const [errors, setErrors] = useState({});
@@ -33,6 +33,8 @@ const CreateTrip = () => {
   const [result, setResult] = useState();
   const [openDailog, setOpenDailog] = useState(false);
   const [loading, setLoading] = useState(false);
+  const { setUser } = useUser(); // ✅ Get setUser from context
+
 
   const navigate = useNavigate();
 
@@ -77,11 +79,10 @@ const CreateTrip = () => {
         );
         console.log("Google User Info:", res.data);
         // Store user data in localStorage or sessionStorage
-        sessionStorage.setItem("user", JSON.stringify(res.data));
-
-       setOpenDailog(false);
-
-        onGenerateTrip();
+       sessionStorage.setItem("user", JSON.stringify(res.data));
+      setUser(res.data); // ✅ this will update Header immediately
+setOpenDailog(false);
+onGenerateTrip();
 
 
       } catch (err) {
@@ -247,6 +248,7 @@ const CreateTrip = () => {
 
         <div className="mb-12 flex justify-end">
           <Button onClick={onGenerateTrip}>
+            
             {loading ? <AiOutlineLoading3Quarters className="h-7 w-7 animate-spin" />
  : "Generate Trip"}
           </Button>

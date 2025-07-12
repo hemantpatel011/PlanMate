@@ -13,8 +13,6 @@ import { Analytics } from "@vercel/analytics/next"
 function App() {
   return (
     <>
-    <SpeedInsights/>
-    <Analytics/>
     <Toaster/>
      
 
@@ -37,6 +35,9 @@ function App() {
       <footer>
         <Footer/>
       </footer>
+
+      <SpeedInsights/>
+    <Analytics/>
     </>
   );
 }

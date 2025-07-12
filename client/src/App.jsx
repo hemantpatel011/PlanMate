@@ -6,11 +6,13 @@ import toast, { Toaster } from 'react-hot-toast';
 import ViewTrip from "./pages/ViewTrip";
 import Footer from "./components/custom/Footer";
 import MyTrip from "./pages/MyTrip";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 
 function App() {
   return (
     <>
+    <SpeedInsights/>
     <Toaster/>
      
 

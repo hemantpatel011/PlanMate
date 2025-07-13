@@ -54,7 +54,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="Absolute fixed z-10 top-0 w-full flex justify-between items-center shadow-emerald-400 p-3 px-5 bg-gray-200">
+      <div className="Absolute fixed z-10 top-0 w-full flex justify-between items-center shadow-emerald-400 p-3 px-5 bg-black/20 backdrop-blur-xl">
         <a href="/">
           <h1 className="text-5xl">
             <span className="font-extrabold text-red-500">Trip</span>

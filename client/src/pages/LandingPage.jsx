@@ -7,11 +7,11 @@ const LandingPage = () => {
     {/* Hero Section */}
      <div className="flex flex-col min-w-full min-h-[1000px] bg-gray-200 items-center pt-60 pb-30 gap-10">
       <h1 className="flex flex-col font-extrabold text-[3.5rem] text-center ">
-        <span className="text-red-600">Discover Your Next Adventure with AI</span> 
-        <span className="mt-[-20px]">Personalized Itineraries at Your Fingertips</span>
+        <span className="text-red-600">Smart, AI-Powered Travel Begins Her</span>
+        <span className="mt-[-20px]">Instant, Personalized Itineraries That Fit Your Style</span>
       </h1>
      
-      <p className="text-2xl font-extralight text-center">Your personal trip planner and travel curator, creating custom itineraries tailored to your interests and budget.</p>
+      <p className="text-2xl font-extralight text-center mx-20">Your intelligent travel companion handles all the planning — from destinations to daily schedules — giving you a fully customized travel experience with zero hassle.</p>
      
      <div className="pb-4">
      <Link to={"/create-trip"}>

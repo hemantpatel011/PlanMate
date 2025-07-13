@@ -298,7 +298,7 @@ onGenerateTrip();
              <DialogTitle> <h1 className='text-2xl flex justify-around items-center '>"Generating Trip..."</h1></DialogTitle>
             <DialogDescription>
              
-              <h1 className="font-bold text-black text-5xl flex justify-around items-center mx-auto">{loading ? <Progress value={39} />
+              <h1 className="font-bold text-black text-5xl flex justify-around items-center mx-auto">{loading ? <Progress value={93} />
  : "Generate Trip"} </h1>
             </DialogDescription>
           </DialogHeader>

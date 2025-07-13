@@ -18,6 +18,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+
 import { FcGoogle } from "react-icons/fc";
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from 'axios';
@@ -25,6 +26,8 @@ import { doc, setDoc } from "firebase/firestore";
 import { db } from "../config/firebaseConfig";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../context/UserContext";
+import { Progress } from "@/components/ui/progress";
+
 
 
 const CreateTrip = () => {
@@ -32,6 +35,7 @@ const CreateTrip = () => {
   const [formData, setFormData] = useState({});
   const [result, setResult] = useState();
   const [openDailog, setOpenDailog] = useState(false);
+  const [openPopover, setOpenPopover] = useState(false);
   const [loading, setLoading] = useState(false);
   const { setUser } = useUser(); // ✅ Get setUser from context
 
@@ -130,6 +134,7 @@ onGenerateTrip();
 
     try {
       setLoading(true);
+      setOpenPopover(true);
        toast.success("Generating Your Trip Plan!");
       const generatedData = await generateTravelPlan(FINAL_PROMPT);
       // console.log("Generated Data:", generatedData);
@@ -141,6 +146,7 @@ onGenerateTrip();
       toast.error("Failed to generate trip plan.");
     } finally {
       setLoading(false);
+      setOpenPopover(false);
     }
   };
 
@@ -160,7 +166,7 @@ onGenerateTrip();
   }
 
   return (
-    <div className="sm:px-10 md:px-32 lg:px-56 xl:px-72 px-5 mask-t-from-100% pt-30 bg-gray-100">
+    <div className="sm:px-10 md:px-32 lg:px-56 xl:px-72 px-5 mask-t-from-100% pt-30">
       <h2 className="font-bold text-4xl ">
         Tell us your travel preferences 🏕️🌴
       </h2>
@@ -246,7 +252,7 @@ onGenerateTrip();
           </div>
         </div>
 
-        <div className="mb-12 flex justify-end">
+        <div className="mb-12 flex justify-end cursor-pointer">
           <Button onClick={onGenerateTrip}>
             
             {loading ? <AiOutlineLoading3Quarters className="h-7 w-7 animate-spin" />
@@ -266,17 +272,34 @@ onGenerateTrip();
         )} */}
       </div>
 
-      <Dialog open={openDailog}>
+      <Dialog open={openDailog} onOpenChange={setOpenDailog}>
         <DialogContent>
           <DialogHeader>
+             <DialogTitle> <h1 className='text-3xl flex '><span className='font-extrabold text-red-600'>Trip</span><span className=' font-extralight text-black'>Mate</span></h1></DialogTitle>
             <DialogDescription>
-              <h1 className='text-3xl flex '><span className='font-extrabold text-red-600'>Trip</span><span className=' font-extralight text-black'>Mate</span></h1>
+             
               <h1 className="font-bold text-black text-lg mt-10 mx-auto">Sign In With Google</h1>
               <p>Sign in to the App with Google authentication securly</p>
 
               <Button
               onClick={login}
               className="w-full mt-5 flex items-center" > <FcGoogle /> Sign In With Google</Button>
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+
+
+
+{/* Popover */}
+    <Dialog open={openPopover}  className="backdrop-blur-2xl" >
+        <DialogContent>
+          <DialogHeader>
+             <DialogTitle> <h1 className='text-2xl flex justify-around items-center '>"Generating Trip..."</h1></DialogTitle>
+            <DialogDescription>
+             
+              <h1 className="font-bold text-black text-5xl flex justify-around items-center mx-auto">{loading ? <Progress value={39} />
+ : "Generate Trip"} </h1>
             </DialogDescription>
           </DialogHeader>
         </DialogContent>

@@ -8,6 +8,7 @@ import Footer from "./components/custom/Footer";
 import MyTrip from "./pages/MyTrip";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react"
+import BgImg from "./components/componentsAssets/tripmate-bg.jpg";
 
 
 function App() {
@@ -15,8 +16,9 @@ function App() {
     <>
     <Toaster/>
      
-
-      <main className="bg-gray-100 min-h-screen">      
+       <img src={BgImg} alt="" className="fixed top-0 right-0 h-screen opacity-50 object-cover object-right bg-cover" /> 
+      <main className={` relative bg-gradient-to-r from-yellow-500/10 via-blue-600/10 to-yellow-500/5 min-h-screen`} >  
+         
       <Router>
          <header>
          <Header />
@@ -31,10 +33,11 @@ function App() {
         </Routes>
       </Router>
     
-      </main>
-      <footer>
+    <footer>
         <Footer/>
       </footer>
+      </main>
+      
 
       <SpeedInsights/>
     <Analytics/>

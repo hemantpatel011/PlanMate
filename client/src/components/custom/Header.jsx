@@ -56,7 +56,7 @@ const Header = () => {
     <>
       <div className="Absolute fixed z-10 top-0 w-full flex justify-between items-center shadow-emerald-400 p-3 px-5 bg-black/20 backdrop-blur-xl">
         <a href="/">
-          <h1 className="text-5xl">
+          <h1 className="text-3xl md:text-5xl">
             <span className="font-extrabold text-red-500">Trip</span>
             <span className=" font-extralight">Mate</span>
           </h1>
@@ -88,6 +88,7 @@ const Header = () => {
               <PopoverContent>
                 <div className="flex flex-col items-center justify-center gap-2">
                   <p className="text-sm text-gray-600 px-[-10px]">{user?.name}</p>
+                  <hr className="text-gray-600" />
                    <a href="/create-trip"
                 className="block md:hidden">
                   Create Trip

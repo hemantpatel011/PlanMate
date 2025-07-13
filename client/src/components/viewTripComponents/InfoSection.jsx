@@ -84,15 +84,15 @@ const InfoSection = ({ trip }) => {
           ) : (
             <>
               <h2 className="px-3 m-2 flex bg-gray-200 rounded-full text-gray-800 text-xs md:text-lg">
-                <FcPlanner className="m-1 mt-[6px]" />
+                <FcPlanner className="m-1 mt-[2px]" />
                 {trip?.userSelection?.noOfDays || "N/A"} Days
               </h2>
               <h2 className="px-3 m-2 flex bg-gray-200 rounded-full text-gray-800 text-xs md:text-lg">
-                <FcMoneyTransfer className="mt-[6px] m-1" /> Budget:{" "}
+                <FcMoneyTransfer className="mt-[2px] m-1" /> Budget:{" "}
                 {trip?.userSelection?.budget || "N/A"}
               </h2>
               <h2 className="px-3 m-2 flex bg-gray-200 rounded-full text-gray-800 text-xs md:text-lg">
-                <FcViewDetails className="mt-[6px] m-1" /> Traveler:{" "}
+                <FcViewDetails className="mt-[2px] m-1" /> Traveler:{" "}
                 {trip?.userSelection?.traveler || "N/A"}
               </h2>
             </>

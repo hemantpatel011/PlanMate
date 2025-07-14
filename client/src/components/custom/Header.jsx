@@ -65,14 +65,14 @@ const Header = () => {
           <div className="flex items-center gap-8 md:mr-10">
             <div>
               <a href="/create-trip">
-                <Button variant="outline" className="hidden md:block rounded-full me-[-10px]">
+                <Button variant="ghost" className="hidden md:block rounded-full me-[-10px]">
                   Create Trip
                 </Button>
               </a>
             </div>
             <div>
               <a href="/my-trip">
-                <Button variant="outline" className="hidden md:block rounded-full">
+                <Button variant="ghost" className="hidden md:block rounded-full">
                   My Trip
                 </Button>
               </a>

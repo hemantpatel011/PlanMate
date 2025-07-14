@@ -5,13 +5,13 @@ const LandingPage = () => {
   return (
     <>
     {/* Hero Section */}
-     <div className="flex flex-col min-w-full min-h-[1000px] items-center pt-60 pb-30 gap-8">
+     <div className="fixed top-0 flex flex-col min-w-full min-h-screen items-center pt-55  gap-8">
       <h1 className="flex flex-col font-extrabold text-2xl md:text-[3.5rem] text-center ">
-        <span className="text-red-600">AI-Powered Travel Plan is Her</span>
-        <span className="mt-[0px]">Instant, Personalized Itineraries That Fit Your Style</span>
+        <span className="text-red-600">AI-Powered Trip Plan is Her</span>
+        <span className=" mt-[-5px] md:mt-[-24px] md:mx-30">Your personalized itineraries in seconds</span>
       </h1>
      
-      <p className=" text-lg md:text-2xl font-extralight text-center mx-6 md:mx-20">Your intelligent travel companion handles all the planning — from destinations to daily schedules — giving you a fully customized travel experience with zero hassle.</p>
+      <p className=" text-lg md:text-2xl font-extralight text-black text-center mx-6 md:mx-20">PlanMate is your intelligent travel companion — an AI-powered platform that creates personalized itineraries for solo travelers, families, and groups in just seconds. From suggesting ideal destinations to crafting day-by-day schedules, PlanMate handles every detail, delivering a seamless, stress-free travel experience tailored to your needs.</p>
      
      <div className="pb-4 mt-8">
      <Link to={"/create-trip"}>

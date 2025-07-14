@@ -7,7 +7,7 @@ const LandingPage = () => {
     {/* Hero Section */}
      <div className="fixed top-0 flex flex-col min-w-full min-h-screen items-center pt-55  gap-8">
       <h1 className="flex flex-col font-extrabold text-2xl md:text-[3.5rem] text-center ">
-        <span className="text-red-600">AI-Powered Trip Plan is Her</span>
+        <span className="text-red-600">AI-Powered Trip Plan is Here</span>
         <span className=" mt-[-5px] md:mt-[-24px] md:mx-30">Your personalized itineraries in seconds</span>
       </h1>
      

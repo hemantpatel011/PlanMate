@@ -49,8 +49,8 @@ PlanMate/
       │   ├── components/
       │   │   ├── custom/                # Custom UI like LocationSearch, Header, Footer
       │   │   ├── ui/                    # ShadCN UI components 
-      │   │    ├── constants/             # Static values like options & prompts
-      │   │     └──componentsAssets        # Dummy Images
+      │   │   ├── constants/             # Static values like options & prompts
+      │   │   └──componentsAssets        # Dummy Images
       │   ├── context/                   # UserContext for managing user state
       │   ├── pages/                     # Pages: Home, CreateTrip, MyTrip
       │   ├── config/                    # API helpers: Gemini, Google, Firestore

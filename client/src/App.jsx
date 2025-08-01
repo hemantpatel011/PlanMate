@@ -18,7 +18,7 @@ function App() {
       <img
         src={BgImg}
         alt=""
-        className="fixed top-0 right-0 h-screen opacity-50 object-cover object-right bg-cover"
+        className="fixed top-0 h-screen w-screen opacity-25 object-cover z-[-1] pointer-events-none"
       />
       <main
         className={` relative bg-gradient-to-r from-yellow-500/15 via-blue-600/15 to-yellow-500/15 min-h-screen`}

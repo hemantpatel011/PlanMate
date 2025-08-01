@@ -17,6 +17,7 @@ import axios from "axios";
 import { useUser } from "@/context/UserContext";
 
 import dummyProfilepic from "@/components/componentsAssets/dummyProfilepic.png"; 
+import { TiThMenu } from "react-icons/ti";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
@@ -57,7 +58,7 @@ const Header = () => {
       <div className="Absolute fixed z-10 top-0 w-full flex justify-between items-center shadow-emerald-400 p-3 px-5 bg-black/20 backdrop-blur-xl">
         <a href="/">
           <h1 className="text-3xl md:text-5xl">
-            <span className="font-extrabold text-red-500">Trip</span>
+            <span className="font-extrabold text-red-500">Plan</span>
             <span className=" font-extralight">Mate</span>
           </h1>
         </a>
@@ -66,7 +67,7 @@ const Header = () => {
             <div>
               <a href="/create-trip">
                 <Button variant="ghost" className="hidden md:block rounded-full me-[-10px]">
-                  Create Trip
+                 + Plan Trip
                 </Button>
               </a>
             </div>
@@ -79,11 +80,12 @@ const Header = () => {
             </div>
 
             <Popover>
-              <PopoverTrigger>
+              <PopoverTrigger >
                 <img
       src={ dummyProfilepic} 
-      className="h-8 w-8 rounded-full cursor-pointer"
+      className="hidden md:block h-8 w-8 rounded-full cursor-pointer"
     />
+    <TiThMenu  className="block md:hidden"/>
               </PopoverTrigger>
               <PopoverContent>
                 <div className="flex flex-col items-center justify-center gap-2">
@@ -91,7 +93,7 @@ const Header = () => {
                   <hr className="text-gray-600" />
                    <a href="/create-trip"
                 className="block md:hidden">
-                  Create Trip
+                  + Plan Trip
               </a>
                   <a href="/my-trip" className="block md:hidden">
                     My Trip
@@ -118,7 +120,7 @@ const Header = () => {
                 <DialogHeader>
                   <DialogDescription>
                     <h1 className="text-3xl flex ">
-                      <span className="font-extrabold text-red-600">Trip</span>
+                      <span className="font-extrabold text-red-600"></span>
                       <span className=" font-extralight text-black">Mate</span>
                     </h1>
                     <h1 className="font-bold text-black text-lg mt-10 mx-auto">
